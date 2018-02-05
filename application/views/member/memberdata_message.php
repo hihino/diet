@@ -68,11 +68,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>This is register page!</h1>
+	<h1>This is Member page!</h1>
 
 	<div id="body">
-		Welcome to the register page  (這裡是註冊頁)
+	
+		Welcome to the Member page  (這裡是會員資料列表頁)
 	</div>
+	<?php
+	
+foreach ($account_list as $value)
+{
+    echo $value->account_num.'<p>';
+    echo $value->account_id.'<p>';
+    echo $value->account_name.'<p>';
+}
+	
+	//var_dump($account_list);
+	?>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 </body>
